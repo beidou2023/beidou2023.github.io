@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="prism.css" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        nav ul li{
+            display: inline-block;
+            position: relative;
+        }
+        nav ul li a{
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #333;
+        }
+        nav ul li a:hover{
+            background-color: #ccc;
+        }
+        nav ul ul{
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #f2f2f2;
+            z-index: 2;
+            padding: 0;
+        }
+        nav ul li:hover>ul{
+            display: block;
+           
+        }
+        nav ul ul li{
+            display: block;
+            position: relative;
+            
+        }
+        #text{
+            width: 300px;  
+            height: 100px;  
+            margin: 20px; 
+            padding: 10px; 
+            font-size: 16px;  
+        }
+        #container{
+            width: 810px;
+            align-items: center;
+            margin: auto;
+        }
+        
+    </style>
+    
+</head>
+<body>
+    <header>
+
+    </header>
+    <nav style="width: 810px;
+    align-items: center;
+    margin: auto;">
+        <ul>
+            <li><a href="#">Ejercicios 1-5</a>
+                <ul>
+                    <li><a href="#" onclick="ejercicio1()">Ejercicio 1</a></li>
+                    <li><a href="#" onclick="ejercicio2()">Ejercicio 2</a></li>
+                    <li><a href="#" onclick="ejercicio3()">Ejercicio 3</a></li>
+                    <li><a href="#" onclick="ejercicio4()">Ejercicio 4</a></li>
+                    <li><a href="#" onclick="ejercicio5()">Ejercicio 5</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Ejercicios 6-10</a>
+                <ul>
+                    <li><a href="#" onclick="ejercicio6()">Ejercicio 6</a></li>
+                    <li><a href="#" onclick="ejercicio7()">Ejercicio 7</a></li>
+                    <li><a href="#" onclick="ejercicio8()">Ejercicio 8</a></li>
+                    <li><a href="#" onclick="ejercicio9()">Ejercicio 9</a></li>
+                    <li><a href="#" onclick="ejercicio10()">Ejercicio 10</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Ejercicios 11-15</a>
+                <ul>
+                    <li><a href="#" onclick="ejercicio11()">Ejercicio 11</a></li>
+                    <li><a href="#" onclick="ejercicio12()">Ejercicio 12</a></li>
+                    <li><a href="#" onclick="ejercicio13()">Ejercicio 13</a></li>
+                    <li><a href="#" onclick="ejercicio14()">Ejercicio 14</a></li>
+                    <li><a href="#" onclick="ejercicio15()">Ejercicio 15</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Ejercicios 16-20</a>
+                <ul>
+                    <li><a href="#" onclick="ejercicio16()">Ejercicio 16</a></li>
+                    <li><a href="#" onclick="ejercicio17()">Ejercicio 17</a></li>
+                    <li><a href="#" onclick="ejercicio18()">Ejercicio 18</a></li>
+                    <li><a href="#" onclick="ejercicio19()">Ejercicio 19</a></li>
+                    <li><a href="#" onclick="ejercicio20()">Ejercicio 20</a></li>
+                </ul>
+            </li>
+        </ul>
+        
+    </nav>
+    <aside>
+
+    </aside>
+    <body>
+        
+
+        <div id="container">
+            <h1 id="titulo">Titulo</h1>
+            <br>
+            <p id="enunciado" style="font-style: italic;text-align: center;" >...</p>
+            <br>
+            <p id="muestra">Resultado</p>
+            <br>
+            <pre><code class="language-javascript" id="text">Codigo
+            </code></pre>
+        
+        </div>
+        
+    </body>
+    <footer>
+
+    </footer>
+
+    <script>
+        var tit=document.getElementById("titulo");
+        var stat=document.getElementById("enunciado");
+        var res=document.getElementById("muestra");
+        var code=document.getElementById("text");
+    
+function ejercicio1() {
+    tit.textContent='Ejercicio 1';
+    stat.textContent='Crea un arreglo vacío llamado miArreglo.';
+
+    var miArreglo = [];
+    res.textContent = "[ "+miArreglo+" ]";
+
+    var newcode='\nfunction ejercicio1() {\n    var miArreglo = [];\n    res.textContent = "[ "+miArreglo+" ]";\n}';
+    code.textContent=newcode;
+    Prism.highlightElement(code);
+}
+
+function ejercicio2() {
+    tit.textContent='Ejercicio 2';
+    stat.textContent='Crea un arreglo con números del 1 al 10.';
+
+    var numero = [];
+    for (let index = 0; index < 10; index++) {
+        numero[index] = index + 1;
+    }
+    res.textContent = '[' + numero + ']';
+
+    var newcode="\nfunction ejercicio2() {\n    var numero = [];\n    for (let index = 0; index < 10; index++) {\n        numero[index] = index + 1;\n    }\n    res.textContent = '[' + numero + ']';\n}";
+    code.textContent=newcode;
+    Prism.highlightElement(code);
+}
+
+function ejercicio3() {
+    tit.textContent='Ejercicio 3';
+    stat.textContent='Accede al tercer elemento de un arreglo llamado colores.';
+
+    var colores = ["aqua", "celeste", "amarillo", "neon", "lila"];
+    res.textContent = "Del arreglo: [ " + colores + " ]";
+    res.innerHTML += "<br>El tercer elemento es: " + colores[2];
+
+    var newcode='\nfunction ejercicio3() {\n    var colores = ["aqua", "celeste", "amarillo", "neon", "lila"];\n    res.textContent = "Del arreglo: [ " + colores + " ]";\n    res.innerHTML += "<br>El tercer elemento es: " + colores[2];\n}';
+    code.textContent=newcode;
+    Prism.highlightElement(code);
+}
+
+function ejercicio4() {
+    tit.textContent='Ejercicio 4';
+    stat.textContent='Agrega un elemento "naranja" al final de un arreglo llamado frutas.';
+
+    var frutas = ["melon", "blueberry", "pera", "tuna"];
+    res.textContent = 'Arreglo antiguo: [' + frutas + ']';
+    frutas.push("naranja");
+    res.innerHTML+= '<br>Arreglo nuevo: [' + frutas + ']';
+    
+    var newcode='\nfunction ejercicio4() {\n    var frutas = ["melon", "blueberry", "pera", "tuna"];\n    res.textContent = "Arreglo antiguo: [" + frutas + "]";\n    frutas.push("naranja");\n    res.innerHTML += "<br>Arreglo nuevo: [" + frutas + "]";\n}';
+    code.textContent=newcode;
+    Prism.highlightElement(code);
+}
+
+function ejercicio5() {
+    tit.textContent='Ejercicio 5';
+    stat.textContent='Elimina el último elemento de un arreglo llamado ciudades.';
+
+    var ciudades = ["sucre", "madagascar", "cochabamba", "lima"];
+    res.textContent = 'Arreglo antiguo: [ ' + ciudades + ' ]';
+    ciudades.pop();
+    res.innerHTML += '<br>Arreglo nuevo: [ ' + ciudades + ' ]';
+
+    var newcode='\nfunction ejercicio5() {\n    var ciudades = ["sucre", "madagascar", "cochabamba", "lima"];\n    res.textContent = "Arreglo antiguo: [ " + ciudades + " ]";\n    ciudades.pop();\n    res.innerHTML += "<br>Arreglo nuevo: [ " + ciudades + " ]";\n}';
+    code.textContent=newcode;
+    Prism.highlightElement(code);
+}
+
+function ejercicio6() {
+    tit.textContent='Ejercicio 6';
+    stat.textContent='Encuentra la longitud de un arreglo llamado numeros.';
+
+    var numeros = [1, 1, 2, 3, 5, 8, 13, 21];
+    var lon = numeros.length;
+    res.textContent = "La longitud de [" + numeros + "]\nes: " + lon;
+
+    var newcode='\nfunction ejercicio6() {\n    var numeros = [1, 1, 2, 3, 5, 8, 13, 21];\n    var lon = numeros.length;\n    res.textContent = "La longitud de [" + numeros + "] es: " + lon;\n}';
+    code.textContent=newcode;
+    Prism.highlightElement(code);
+
+}
+
+function ejercicio7() {
+    tit.textContent='Ejercicio 7';
+    stat.textContent='Itera a través de un arreglo de nombres e imprime cada nombre.';
+
+    var nombres = ["Luisa", "Monk", "Kest", "Dilan"];
+    res.textContent = "";
+    for (let index = 0; index < nombres.length; index++) {
+        res.innerHTML += nombres[index]+"<br>";
+    }
+
+    var newcode='\nfunction ejercicio7() {\n    var nombres = ["Luisa", "Monk", "Kest", "Dilan"];\n    res.textContent = "";\n    for (let index = 0; index < nombres.length; index++) {\n        res.innerHTML += nombres[index]+"<br>";\n    }\n}';
+    code.textContent=newcode;
+    Prism.highlightElement(code);
+}
+
+function ejercicio8() {
+    tit.textContent='Ejercicio 8';
+    stat.textContent='Crea una copia de un arreglo llamado original en un nuevo arreglo llamado copia.';
+
+    var original = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    res.textContent = 'Original: [ '+original+' ]';
+    var copia = original.slice();
+    res.innerHTML += '<br>Copia: [ '+copia+' ]';
+
+    var newcode='\nfunction ejercicio8() {\n    var original = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];\n    res.textContent = "Original: [ " + original + " ]";\n    var copia = original.slice();\n    res.innerHTML += "Copia: <br>[ " + copia + " ]";\n}';
+    code.textContent=newcode;
+    Prism.highlightElement(code);
+}
+
+function ejercicio9() {
+    tit.textContent='Ejercicio 9';
+    stat.textContent='Encuentra el índice de "pera" en un arreglo llamado frutas.';
+
+    var frutas = ["melon", "blueberry", "pera", "tuna"];
+    var veri = false;
+    var ind;
+    for (let index = 0; index < frutas.length; index++) {
+        if (frutas[index] == "pera") {
+            veri = true;
+            ind = index;
+            break;
+        }
+    }
+    res.textContent = "Del arreglo: ["+frutas+" ]";
+
+    if (veri)
+        res.innerHTML += "<br>Pera esta en el indice: " + ind;
+    else
+        res.innerHTML += "<br>Pera no se encuentra en el arreglo";
+
+    var newcode='\nfunction ejercicio9() {\n    var frutas = ["melon", "blueberry", "pera", "tuna"];\n    var veri = false;\n    var ind;\n    for (let index = 0; index < frutas.length; index++) {\n        if (frutas[index] == "pera") {\n            veri = true;\n            ind = index;\n            break;\n        }\n    }\n    res.textContent = "Del arreglo: [" + frutas + " ]";\n\n    if (veri)\n        res.innerHTML += "<br>Pera esta en el indice: " + ind;\n    else\n        res.innerHTML += "<br>Pera no se encuentra en el arreglo";\n}';
+    code.textContent=newcode;
+    Prism.highlightElement(code);
+}
+
+function ejercicio10() {
+    tit.textContent='Ejercicio 10';
+    stat.textContent='Concatena dos arreglos llamados primerArreglo y segundoArreglo.';
+
+    var primerArreglo = [1, 2, 3, 4, 5];
+    var segundoArreglo = [6, 7, 8, 9, 10];
+    var conctArreglo = primerArreglo.concat(segundoArreglo);
+    res.textContent = 'Primer arreglo:   [ '+primerArreglo+' ]';
+    res.innerHTML += '<br>Segundo arreglo: [ '+segundoArreglo+' ]';
+    res.innerHTML += '<br>Concatenados: [ '+conctArreglo+' ]';
+
+    var newcode='\nfunction ejercicio10() {\n    var primerArreglo = [1, 2, 3, 4, 5];\n    var segundoArreglo = [6, 7, 8, 9, 10];\n    var conctArreglo = primerArreglo.concat(segundoArreglo);\n    res.textContent = "Primer arreglo: [ " + primerArreglo + " ]";\n    res.innerHTML += "<br>Segundo arreglo: [ " + segundoArreglo + " ]";\n    res.innerHTML += "<br>Concatenados: [ " + conctArreglo + " ]";\n}';
+    code.textContent=newcode;
+    Prism.highlightElement(code);
+}
+
+function ejercicio11() {
+    tit.textContent='Ejercicio 11';
+    stat.textContent='Ordena un arreglo de números llamado numeros de forma ascendente.';
+
+    var numbers = [4, 57, 3, 23, 66, 78, 90, 1, 76];
+    var aux;
+    res.textContent = 'Arreglo original:   [ '+numbers+' ]';
+    for (let index = 0; index < numbers.length; index++) 
+    {
+        for (let index2 = 0; index2 < numbers.length; index2++) {
+            if (numbers[index2]>=numbers[index2+1])
+            {
+                aux=numbers[index2];
+                numbers[index2]=numbers[index2+1];
+                numbers[index2+1]=aux;
+            }
+        }
+    }
+    res.innerHTML += '<br>Arreglo ordenado: [ '+numbers+' ]';
+
+    var newcode='\nfunction ejercicio11() {\n    var numbers = [4, 57, 3, 23, 66, 78, 90, 1, 76];\n    var aux;\n    res.textContent = "Arreglo original:   [ " + numbers + " ]";\n    for (let index = 0; index < numbers.length; index++) {\n        for (let index2 = 0; index2 < numbers.length; index2++) {\n            if (numbers[index2] >= numbers[index2 + 1]) {\n                aux = numbers[index2];\n                numbers[index2] = numbers[index2 + 1];\n                numbers[index2 + 1] = aux;\n            }\n        }\n    }\n    res.innerHTML += "<br>Arreglo ordenado: [ " + numbers + " ]";\n}';
+    code.textContent=newcode;
+    Prism.highlightElement(code);
+}
+
+function ejercicio12() {
+    tit.textContent='Ejercicio 12';
+    stat.textContent='Invierte un arreglo llamado palabras.';
+
+    var palabras = ["ae", "ei", "io", "ou", "ua"];
+    var aux;
+    res.textContent='Arreglo inicial: [ '+palabras+' ]'; 
+
+    len = palabras.length;
+    for (let index = 0; index < len / 2; index++) {
+        aux = palabras[index];
+        palabras[index] = palabras[len - 1 - index];
+        palabras[len - 1 - index] = aux;
+    }
+    res.innerHTML += '<br>Arreglo final: [ '+palabras+' ]';
+
+    var newcode='\nfunction ejercicio12() {\n    var palabras = ["ae", "ei", "io", "ou", "ua"];\n    var aux;\n    res.textContent = "Arreglo inicial: [ " + palabras + " ]";\n\n    len = palabras.length;\n    for (let index = 0; index < len / 2; index++) {\n        aux = palabras[index];\n        palabras[index] = palabras[len - 1 - index];\n        palabras[len - 1 - index] = aux;\n    }\n    res.innerHTML += "<br>Arreglo final: [ " + palabras + " ]";\n}';
+    code.textContent=newcode;
+    Prism.highlightElement(code);
+}
+
+function ejercicio13() {
+    tit.textContent='Ejercicio 13';
+    stat.textContent='Filtra los números pares de un arreglo llamado numeros.';
+
+    var num1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    var num2 = [];
+    res.textContent='Arreglo inicial: [ '+num1+' ]';
+    for (let index = 0; index < num1.length; index++) {
+        if (num1[index] % 2 != 0)
+            num2.push(num1[index]);
+    }
+    res.innerHTML += '<br>Arreglo filtrado: [ '+num2+' ]';
+
+    var newcode='\nfunction ejercicio13() {\n    var num1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];\n    var num2 = [];\n    res.textContent = "Arreglo inicial: [ " + num1 + " ]";\n    for (let index = 0; index < num1.length; index++) {\n        if (num1[index] % 2 != 0)\n            num2.push(num1[index]);\n    }\n    res.innerHTML += "<br>Arreglo filtrado: [ " + num2 + " ]";\n}';
+    code.textContent=newcode;
+    Prism.highlightElement(code);
+}
+
+function ejercicio14() {
+    tit.textContent='Ejercicio 14';
+    stat.textContent='Suma todos los números en un arreglo llamado valores.';
+
+    var num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    var suma = 0;
+    res.textContent='Arreglo de numeros: [ '+num+' ]';
+    for (let index = 0; index < num.length; index++) {
+        suma += num[index];
+    }
+    res.innerHTML += '<br>La suma de los numeros es: '+suma;
+
+    var newcode='\nfunction ejercicio14() {\n    var num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];\n    var suma = 0;\n    res.textContent = "Arreglo de numeros: [ " + num + " ]";\n    for (let index = 0; index < num.length; index++) {\n        suma += num[index];\n    }\n    res.innerHTML += "<br>La suma de los numeros es: " + suma;\n}';
+    code.textContent=newcode;
+    Prism.highlightElement(code);
+}
+
+function ejercicio15() {
+    tit.textContent='Ejercicio 15';
+    stat.textContent='Encuentra el valor máximo en un arreglo llamado edades.';
+
+    var edades = [25, 32, 54, 20, 19];
+    var max = 0;
+    res.textContent='Arreglo de numeros: [ '+edades+' ]';
+    for (let index = 0; index < edades.length; index++) {
+        if (edades[index] > max)
+            max = edades[index];
+    }
+    res.innerHTML += '<br>La edad maxima es: '+max;
+
+    var newcode='\nfunction ejercicio15() {\n    var edades = [25, 32, 54, 20, 19];\n    var max = 0;\n    res.textContent = "Arreglo de numeros: [ " + edades + " ]";\n    for (let index = 0; index < edades.length; index++) {\n        if (edades[index] > max)\n            max = edades[index];\n    }\n    res.innerHTML += "<br>La edad maxima es: " + max;\n}';
+    code.textContent=newcode;
+    Prism.highlightElement(code);
+}
+
+function ejercicio16() {
+    tit.textContent='Ejercicio 16';
+    stat.textContent='Elimina todos los elementos duplicados de un arreglo llamado duplicados.';
+
+    var duplicados1 = [1, 2, 2, 4, 6, 6, 7, 8, 9, 10];
+    var duplicados = [];
+    res.textContent='Arreglo de numeros: [ '+duplicados1+' ]';
+    for (let index = 0; index < duplicados1.length; index++) {
+        var elemento = duplicados1[index];
+        if (duplicados.indexOf(elemento) == -1) {
+            duplicados.push(elemento);
+        }
+    }
+    res.innerHTML += '<br>Arreglo con numeros unicos: [ '+duplicados+' ]';
+
+    var newcode='\nfunction ejercicio16() {\n    var duplicados1 = [1, 2, 2, 4, 6, 6, 7, 8, 9, 10];\n    var duplicados = [];\n    res.textContent = "Arreglo de numeros: [ " + duplicados1 + " ]";\n    for (let index = 0; index < duplicados1.length; index++) {\n        var elemento = duplicados1[index];\n        if (duplicados.indexOf(elemento) == -1) {\n            duplicados.push(elemento);\n        }\n    }\n    res.innerHTML += "<br>Arreglo con numeros unicos: [ " + duplicados + " ]";\n}';
+    code.textContent=newcode;
+    Prism.highlightElement(code);
+}
+
+function ejercicio17() {
+    tit.textContent='Ejercicio 17';
+    stat.textContent='Crea una función llamada calcularPromedio que reciba dos arreglos de notas, los sume y calcule el promedio en un tercer arreglo.';
+
+    let calcularpromedio = (nota1, nota2, nota3) => {
+        for (let index = 0; index < nota1.length; index++) {
+            nota3[index] = (nota1[index] + nota2[index]) / 2;
+        }
+        return (nota3);
+    }
+    nota1 = [30, 60, 50];
+    nota2 = [40, 80, 90];
+    res.textContent='Notas 1: [ '+nota1+' ]';
+    res.innerHTML += '<br>Notas 2: [ '+nota2+' ]';
+    nota3 = calcularpromedio(nota1, nota2, []);
+    res.innerHTML += '<br>Promedio de notas: [ '+nota3+' ]';
+
+    var newcode='\nfunction ejercicio17() {\n    let calcularpromedio = (nota1, nota2, nota3) => {\n        for (let index = 0; index < nota1.length; index++) {\n            nota3[index] = (nota1[index] + nota2[index]) / 2;\n        }\n        return (nota3);\n    }\n    nota1 = [30, 60, 50];\n    nota2 = [40, 80, 90];\n    res.textContent = "Notas 1: [ " + nota1 + " ]";\n    res.innerHTML += "<br>Notas 2: [ " + nota2 + " ]";\n    nota3 = calcularpromedio(nota1, nota2, []);\n    res.innerHTML += "<br>Promedio de notas: [ " + nota3 + " ]";\n}';
+    code.textContent=newcode;
+    Prism.highlightElement(code);
+}
+
+function ejercicio18() {
+    tit.textContent='Ejercicio 18';
+    stat.textContent='Encuentra el valor mínimo en un arreglo llamado valores.';
+
+    var valores = [6, 3, 7, 6, 4, 7, 6, 9, 10, 4];
+    min = valores[0];
+    res.textContent='Arreglo de valores: [ '+valores+' ]';
+    for (let index = 0; index < valores.length; index++) {
+        if (valores[index] < min)
+            min = valores[index]
+    }
+    res.innerHTML += '<br>El valor minimo es: ' +min;
+
+    var newcode='\nfunction ejercicio18() {\n    var valores = [6, 3, 7, 6, 4, 7, 6, 9, 10, 4];\n    min = valores[0];\n    res.textContent = "Arreglo de valores: [ " + valores + " ]";\n    for (let index = 0; index < valores.length; index++) {\n        if (valores[index] < min)\n            min = valores[index]\n    }\n    res.innerHTML += "<br>El valor minimo es: " + min;\n}';
+    code.textContent=newcode;
+    Prism.highlightElement(code);
+}
+
+function ejercicio19() {
+    tit.textContent='Ejercicio 19';
+    stat.textContent='Combina dos arreglos llamados parte1 y parte2 en un solo arreglo llamado combinado.';
+
+    var parte1 = [1, 2, 3, 4, 5];
+    var parte2 = [6, 7, 8, 9, 10];
+    res.textContent='Parte 1: [ '+parte1+' ]';
+    res.innerHTML+='<br>Parte 2: [ '+parte2+' ]';
+    var combinado = parte1.concat(parte2);
+    res.innerHTML+='<br>Combinado: [ '+combinado+' ]';
+
+    var newcode='\nfunction ejercicio19() {\n    var parte1 = [1, 2, 3, 4, 5];\n    var parte2 = [6, 7, 8, 9, 10];\n    res.textContent = "Parte 1: [ " + parte1 + " ]";\n    res.innerHTML += "<br>Parte 2: [ " + parte2 + " ]";\n    var combinado = parte1.concat(parte2);\n    res.innerHTML += "<br>Combinado: [ " + combinado + " ]";\n}';
+    code.textContent=newcode;
+    Prism.highlightElement(code);
+}
+
+function ejercicio20() {
+    tit.textContent='Ejercicio 20';
+    stat.textContent='Encuentra el índice del primer elemento que sea mayor que 50 en un arreglo llamado puntajes.';
+
+    var puntajes = [45, 43, 25, 37, 54, 65, 89, 100];
+    res.textContent='Puntajes: [ '+puntajes+' ]';
+    for (let index = 0; index < puntajes.length; index++) {
+        if (puntajes[index] > 50) {
+            res.innerHTML+= '<br>El indice del primer puntaje mayor a 50 es: '+index;
+            break;
+        }
+    }
+
+    var newcode='\nfunction ejercicio20() {\n    var puntajes = [45, 43, 25, 37, 54, 65, 89, 100];\n    res.textContent = "Puntajes: [ " + puntajes + " ]";\n    for (let index = 0; index < puntajes.length; index++) {\n        if (puntajes[index] > 50) {\n            res.innerHTML += "<br>El indice del primer puntaje mayor a 50 es: " + index;\n            break;\n        }\n    }\n}';
+    code.textContent=newcode;
+    Prism.highlightElement(code);
+}
+
+    </script>
+    <script src="prism.js"></script>
+</body>
+</html>
